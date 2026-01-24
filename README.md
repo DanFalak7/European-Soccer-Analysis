@@ -527,11 +527,23 @@ WHERE ranks = 1
 
 ##  Skills Demonstrated
 
-- Advanced SQL querying and optimization
-- Complex JOIN operations across multiple relational tables
-- Common Table Expressions (CTEs) for modular and readable queries
-- Window functions (`RANK()`, `PARTITION BY`) for advanced ranking analysis
-- Data aggregation and metric creation
-- Exploratory data analysis (EDA) using SQL
-- Analytical thinking and insight generation from raw data
-- Translating football data into measurable performance indicators
+#### SQL Skills
+-	Data Cleaning & Transformation: ALTER TABLE for type conversion, null checks, and ensuring data integrity.
+-	Joins: INNER JOIN, LEFT JOIN, USING for combining multiple tables (matches, leagues, teams, countries).
+-	Aggregations: COUNT(), SUM(), AVG(), for calculating matches, goals, and win/draw/loss statistics.
+-	Conditional Logic: CASE WHEN statements to compute points, wins, draws, and losses.
+-	Window Functions: RANK() OVER(PARTITION BY ...) to rank teams within leagues and stages.
+-	Common Table Expressions (CTEs): Organizing complex queries with WITH for clarity and modularity.
+-	Views: CREATE VIEW to create reusable virtual tables for the Top 5 leagues.
+  
+#### Data Analysis Skills
+-	Exploratory Data Analysis (EDA): Identifying trends, distributions, and patterns across leagues and seasons.
+-	Performance Analysis: Evaluating team dominance, win rates, home advantage, and competitiveness.
+-	Time Series & Seasonal Analysis: Analyzing scoring trends across months, stages, and seasons.
+-	Comparative Analysis: Comparing leagues, teams, and seasonal trends to draw meaningful insights.
+
+#### Analytical Thinking
+-	Breaking down a large dataset into digestible parts
+-	Translating football domain questions into SQL queries
+-	Interpreting results to generate actionable insights
+### 
