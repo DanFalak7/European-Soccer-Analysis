@@ -1,4 +1,4 @@
-#  European Soccer SQL Analysis (Top 5 Leagues)
+#  European Football SQL Analysis (Top 5 Leagues)
 
 ##  Project Overview
 This project is a comprehensive **SQL-based exploratory data analysis** of European soccer matches, focusing on the **Top 5 European leagues**:
@@ -30,7 +30,10 @@ The goal is to demonstrate **advanced SQL skills** including joins, CTEs, window
 - **Table Creation**: Creation of the tables and data import
 - **Database Exploration & Cleaning**: Handlimng, data type, null values and ensuring data integrity
 - **Virtual Table**: The top 5 leagues extraction from the main table
-- **Data Analysis & Findings**: Each SQL query answers a specific analytical question related to football performance and competitiveness.
+- **Data Analysis**: Each SQL query answers a specific analytical question related to football performance and competitiveness.
+- **Key Findings**:
+- **Insights**:
+- 
 
 
 ### Database Setup
@@ -501,3 +504,34 @@ SELECT league, season, month,
 FROM ranked_months
 WHERE ranks = 1
 ```
+
+## Key Findings: 
+
+1.	**League Scoring Trends:** Bundesliga highest scoring (2.93 goals/match), Ligue 1 lowest (2.50).
+2.	**League Competitiveness:** Serie A & Ligue 1 most competitive; La Liga less competitive.
+3.	**Dominant Teams:** Manchester City, PSG, Bayern Munich, Juventus, Barcelona consistently lead.
+4.	**Top Win Rates:** Bayern Munich 77.94%, Barcelona 76.97%, Juventus 72.48%.
+5.	**Lowest Win Rates:** Cardoba CF, Racing Santander, Cesena <17% win rate.
+6.	**Home Advantage:** Strong across all leagues; top teams benefit significantly.
+7.	**High-Scoring Seasons:** Bundesliga 2013/2014 and La Liga 2012/2013 notable.
+8.	**Competitive Match Stages:** Early and mid-season stages more unpredictable.
+9.	**Seasonal Competitiveness:** Early season slightly more volatile.
+10.	**Goal Patterns by Month:** Peak months vary per league (Dec, Mar, May).
+
+## Insights
+
+- Elite clubs dominate consistently across leagues.
+- Home advantage remains critical for success.
+- Competitiveness and scoring trends vary by league, season, and match stage.
+- Useful for analysts, scouts, or anyone studying European soccer trends.
+
+##  Skills Demonstrated
+
+- Advanced SQL querying and optimization
+- Complex JOIN operations across multiple relational tables
+- Common Table Expressions (CTEs) for modular and readable queries
+- Window functions (`RANK()`, `PARTITION BY`) for advanced ranking analysis
+- Data aggregation and metric creation
+- Exploratory data analysis (EDA) using SQL
+- Analytical thinking and insight generation from raw data
+- Translating football data into measurable performance indicators
