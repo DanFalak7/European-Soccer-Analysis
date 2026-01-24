@@ -26,7 +26,7 @@ The goal is to demonstrate **advanced SQL skills** including joins, CTEs, window
 
 ##  Project Structure
 
-- **Database Setup**: Creation of the `european_soccer_db`
+- **Database Setup**: Creation of the `european_football_analysis`
 - **Table Creation**: Creation of the tables and data import
 - **Database Exploration & Cleaning**: Handlimng, data type, null values and ensuring data integrity
 - **Virtual Table**: The top 5 leagues extraction from the main table
