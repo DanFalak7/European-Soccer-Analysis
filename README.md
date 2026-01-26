@@ -1,9 +1,12 @@
 #  European Football SQL Analysis (Top 5 Leagues)
 
 ##  Project Overview
-**Project Title:** European Football
-**Level:** Advanced
-**Database:** `european_soccer`
+
+**Project Title**: European Football
+
+**Level**: Advanced
+
+**Database**: `european_soccer`
 
 This project is a comprehensive **SQL-based exploratory data analysis** of European soccer matches, focusing on the **Top 5 European leagues**:
 
