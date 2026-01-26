@@ -1,6 +1,10 @@
 #  European Football SQL Analysis (Top 5 Leagues)
 
 ##  Project Overview
+**Project Title:** European Football
+**Level:** Advanced
+**Database:** `european_soccer`
+
 This project is a comprehensive **SQL-based exploratory data analysis** of European soccer matches, focusing on the **Top 5 European leagues**:
 
 - English Premier League
@@ -26,14 +30,12 @@ The goal is to demonstrate **advanced SQL skills** including joins, CTEs, window
 
 ##  Project Structure
 
-- **Database Setup**: Creation of the `european_football_analysis`
-- **Table Creation**: Creation of the tables and data import
-- **Database Exploration & Cleaning**: Handlimng, data type, null values and ensuring data integrity
-- **Virtual Table**: The top 5 leagues extraction from the main table
+- **Database Setup**: Created a database named `european_soccer` and creation tables for countries, leagues, matches and teams
+- **Database Cleaning & Exploration**: Handling, data type, null values and ensuring data integrity
+- **Virtual Table**: Extracted the top 5 leagues from the main table which includes EPL, Bundesliga, Ligue 1, , Seria A and La liga
 - **Data Analysis**: Each SQL query answers a specific analytical question related to football performance and competitiveness.
-- **Key Findings**:
-- **Insights**:
-- 
+- **Key Findings**: Identified differences in goal-scoring trends, home advantage, and competitive balance across Europe’s top leagues.
+- **Insights**: Revealed how tactical styles, home advantage, and team dominance vary by league, supporting comparative football performance analysis.
 
 
 ### Database Setup
@@ -41,23 +43,22 @@ The goal is to demonstrate **advanced SQL skills** including joins, CTEs, window
 ```sql
 DROP DATABASE IF EXISTS european_soccer; 
 CREATE DATABASE european_Soccer;
-```
 
-### Table Creation
-
-```sql
+-- Create table "Countries"
 CREATE TABLE countries (
-		id INT,
-        name VARCHAR(50));
-        
-CREATE TABLE leagues (
-		id INT,
-        country_id INT,
+		id INT PRIMARY KEY,
         name VARCHAR(50));
 
+-- Create table "Leagues" 
+CREATE TABLE leagues (
+		id INT PRIMARY KEY,
+        FOREIGN KEY (country_id) REFERENCES countries(country_id),
+        name VARCHAR(50));
+
+-- Create table "matches"
 CREATE TABLE matches (
-		id INT,
-        country_id INT,
+		id INT PRIMARY KEY,
+        FOREIGN KEY (country_id) REFERENCES countries(country_id),
         season VARCHAR(10),
         stage INT,
         date CHAR(10),
@@ -66,21 +67,12 @@ CREATE TABLE matches (
         home_goal INT,
         away_goal INT);
 
+-- Create table "Teams"
 CREATE TABLE teams (
-		id INT,
+		id INT PRIMARY KEY,
         team_api_id INT,
         team_long_name VARCHAR(50),
         team_short_name VARCHAR(3));   
-```
-
-### Primary Keys Alteration
-```sql
--- ADD Primary keys and Foreign keys to tables
-ALTER TABLE countries ADD PRIMARY KEY (id);
-ALTER TABLE leagues ADD PRIMARY KEY (id);
-ALTER TABLE teams ADD PRIMARY KEY (team_api_id);
-ALTER TABLE matches ADD PRIMARY KEY (id);
-ALTER TABLE leagues;
 ```
 
 ### Data Cleaning 
@@ -505,7 +497,7 @@ FROM ranked_months
 WHERE ranks = 1
 ```
 
-## Key Findings: 
+## Key Findings:
 
 1.	**League Scoring Trends:** Bundesliga highest scoring (2.93 goals/match), Ligue 1 lowest (2.50).
 2.	**League Competitiveness:** Serie A & Ligue 1 most competitive; La Liga less competitive.
