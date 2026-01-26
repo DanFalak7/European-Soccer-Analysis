@@ -33,12 +33,13 @@ The goal is to demonstrate **advanced SQL skills** including joins, CTEs, window
 
 ##  Project Structure
 
-- **Database Setup**: Created a database named `european_soccer` and creation tables for countries, leagues, matches and teams
-- **Database Cleaning & Exploration**: Handling, data type, null values and ensuring data integrity
-- **Virtual Table**: Extracted the top 5 leagues from the main table which includes EPL, Bundesliga, Ligue 1, , Seria A and La liga
+- **Database Setup**: Created a database named `european_soccer` and creation tables for countries, leagues, matches and teams.
+- **Database Cleaning & Exploration**: Handling, data type, null values while ensuring data integrity.
+- **Virtual Table**: Extracted the top 5 leagues from the main table which includes EPL, Bundesliga, Ligue 1, , Seria A and La liga.
 - **Data Analysis**: Each SQL query answers a specific analytical question related to football performance and competitiveness.
 - **Key Findings**: Identified differences in goal-scoring trends, home advantage, and competitive balance across Europe’s top leagues.
 - **Insights**: Revealed how tactical styles, home advantage, and team dominance vary by league, supporting comparative football performance analysis.
+- **SKills Demonstrated**: Skills showcased ranging from SQL, Data Analysis and Analytical skills.
 
 
 ### Database Setup
