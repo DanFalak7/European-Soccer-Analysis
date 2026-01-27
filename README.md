@@ -500,6 +500,63 @@ SELECT league, season, month,
 FROM ranked_months
 WHERE ranks = 1
 ```
+#### 12. Question: Which club has the highest nunmber of goals in a calendar year?
+**Returns:** The year, team, and yearly goals 
+``` sql
+WITH clubs AS (
+	SELECT EXTRACT(YEAR FROM date) AS year,
+			team_long_name AS team,
+			home_goal AS goal
+	FROM matches
+    LEFT JOIN teams 
+    ON hometeam_id = team_api_id
+    UNION ALL
+    SELECT EXTRACT(YEAR FROM date) As year,
+			team_long_name AS team,
+			away_goal AS goal
+	FROM matches
+    LEFT JOIN teams 
+    ON awayteam_id = team_api_id
+    )
+SELECT year, team,
+		SUM(goal) AS total_goals
+FROM clubs
+GROUP BY year, team
+ORDER BY total_goals DESC;
+```
+
+#### 13. Question: Which match/matches have the highest goal difference against Barcelona
+**Returns**: Returns the match date, home and away team, goals, and differential rank of goals
+``` sql
+WITH home_team AS
+	(SELECT m.id,
+			team_long_name AS home
+	FROM matches m
+    LEFT JOIN teams t
+    ON hometeam_id = team_api_id
+    WHERE hometeam_id = team_api_id),
+away_team AS
+	(SELECT m.id,
+			team_long_name AS away
+	FROM matches m
+    LEFT JOIN teams t
+   ON awayteam_id = team_api_id
+    WHERE awayteam_id = team_api_id)
+SELECT date, home, away, 
+			home_goal, away_goal,
+            ABS(home_goal - away_goal) AS difference,
+			DENSE_RANK() OVER(ORDER BY ABS(home_goal - away_goal) DESC) as match_rank
+FROM matches m
+LEFT JOIN home_team h
+ON m.id = h.id
+LEFT JOIN away_team a
+ON m.id = a.id
+WHERE (m.hometeam_id = 8634 AND m.home_goal < m.away_goal)
+		OR (m.awayteam_id = 8634 AND m.away_goal < m.home_goal)
+ORDER BY match_rank
+LIMIT 2;
+```
+
 
 ## Key Findings:
 
